@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tejokiran Dasari — Responsive Page</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1>Tejokiran Dasari</h1>
+    <p class="subtitle">Frontend Developer — responsive web demo</p>
+  </header>
+
+  <main class="content">
+    <!-- Responsive image with srcset and sizes -->
+    <figure class="profile">
+      <picture>
+        <!-- Provide different sized images (place matching files into images/ folder) -->
+        <source media="(min-width: 900px)" srcset="images/profile-1200.jpg">
+        <source media="(min-width: 600px)" srcset="images/profile-800.jpg">
+        <img src="images/profile-400.jpg" alt="Profile photo of Tejokiran" loading="lazy">
+      </picture>
+      <figcaption>Profile image (responsive)</figcaption>
+    </figure>
+
+    <section id="intro">
+      <h2>Introduction</h2>
+      <p>
+        Hello — I build accessible, responsive interfaces. This page demonstrates a responsive layout
+        (image + text) using an external CSS file and media queries.
+      </p>
+    </section>
+
+    <section id="features">
+      <h2>Features</h2>
+      <ul>
+        <li>Responsive image with &lt;picture&gt; and &lt;img srcset&gt;</li>
+        <li>Layout adapts to mobile and desktop via CSS media queries</li>
+        <li>Tracked and inspected with Git commands</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Tejokiran Dasari</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+/* Base (mobile-first) styles */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  line-height: 1.5;
+  color: #111;
+  background: #fafafa;
+  padding: 1rem;
+}
+
+.site-header {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.subtitle { color: #555; font-size: 0.95rem; }
+
+.content {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr; /* mobile: single column */
+}
+
+.profile img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+/* Larger screens: two-column layout */
+@media (min-width: 700px) {
+  .content {
+    grid-template-columns: 360px 1fr; /* image column + text column */
+    align-items: start;
+    gap: 2rem;
+  }
+  .profile img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}
+
+/* Desktop tweaks */
+@media (min-width: 1100px) {
+  body { padding: 2rem; }
+  .content { gap: 3rem; }
+  .site-header h1 { font-size: 2.2rem; }
+}

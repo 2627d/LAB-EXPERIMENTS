@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Bakery — Featured Products</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar">
+      <div class="brand">Local Bakery</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#featured">Featured</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+    </nav>
+  </header>
+
+  <!-- spacer so content isn't hidden behind fixed nav -->
+  <div class="nav-spacer" aria-hidden="true"></div>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-inner">
+        <h1>Freshly Baked Every Day</h1>
+        <p>Delicious pastries and artisan bread from our local bakery.</p>
+      </div>
+    </section>
+
+    <section id="featured" class="featured-section">
+      <h2>Featured Products</h2>
+
+      <div class="slideshow" id="slideshow" aria-roledescription="carousel">
+        <div class="slides">
+          <div class="slide active">
+            <img src="images/product-1.jpg" alt="Sourdough loaf">
+            <div class="caption"><strong>Sourdough Loaf</strong> — crusty and tangy.</div>
+          </div>
+          <div class="slide">
+            <img src="images/product-2.jpg" alt="Butter croissant">
+            <div class="caption"><strong>Butter Croissant</strong> — flaky and buttery.</div>
+          </div>
+          <div class="slide">
+            <img src="images/product-3.jpg" alt="Chocolate cake slice">
+            <div class="caption"><strong>Chocolate Cake</strong> — rich and moist.</div>
+          </div>
+        </div>
+
+        <div class="controls">
+          <button id="prev" aria-label="Previous slide">‹</button>
+          <button id="playPause" aria-label="Pause autoplay">⏸</button>
+          <button id="next" aria-label="Next slide">›</button>
+        </div>
+
+        <div class="indicators" aria-hidden="false">
+          <button class="dot active" data-index="0"></button>
+          <button class="dot" data-index="1"></button>
+          <button class="dot" data-index="2"></button>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <h2>About Us</h2>
+      <p>We're a small team baking with love. We use traditional techniques and the finest ingredients.</p>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Contact</h2>
+      <p>Email: hello@localbakery.example | Phone: 012-345-6789</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Local Bakery</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

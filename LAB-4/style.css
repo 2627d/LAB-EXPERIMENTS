@@ -1,0 +1,109 @@
+/* Reset-ish and base */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  color: #222;
+  background: #fff9f2;
+  line-height: 1.45;
+}
+
+/* Fixed navigation */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  background: rgba(255,255,255,0.96);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  gap: 1rem;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+}
+
+.brand { font-weight: 700; font-size: 1.1rem; }
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+  margin-left: auto;
+}
+.nav-links a { text-decoration: none; color: #333; padding: .4rem .6rem; border-radius: 6px; }
+.nav-links a:hover { background: rgba(0,0,0,0.04); }
+
+/* mobile menu toggle (hidden on wide) */
+.menu-toggle { display: none; background: none; border: none; font-size: 1.2rem; margin-left: auto; }
+
+/* spacer to prevent content from hiding behind fixed nav */
+.nav-spacer { height: 64px; }
+
+/* Hero */
+.hero {
+  background: linear-gradient(180deg, #fffaf0 0%, #fff4ea 100%);
+  padding: 2.5rem 1rem;
+  text-align: center;
+}
+.hero-inner { max-width: 900px; margin: 0 auto; }
+.hero h1 { margin: 0 0 .25rem 0; font-size: 1.8rem; }
+.hero p { margin: 0; color: #555; }
+
+/* Featured / slideshow styles */
+.featured-section { padding: 2rem 1rem; max-width: 1100px; margin: 0 auto; }
+.slideshow { position: relative; overflow: visible; margin-top: 1rem; }
+.slides { position: relative; min-height: 260px; }
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity .6s ease, transform .6s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .6rem;
+}
+.slide img { width: 100%; max-width: 720px; height: auto; display: block; border-radius: 8px; box-shadow: 0 6px 18px rgba(0,0,0,0.08); }
+.slide.active { opacity: 1; transform: translateY(0); z-index: 2; }
+
+.caption { background: rgba(255,255,255,0.9); padding: .5rem .75rem; border-radius: 6px; margin-top: .25rem; color: #333; }
+
+/* Controls */
+.controls { position: absolute; right: 8px; top: 8px; display:flex; gap: .4rem; }
+.controls button {
+  border: none; background: rgba(0,0,0,0.6); color: #fff; width:36px; height:36px; border-radius:50%;
+  cursor: pointer; font-size: 1.1rem;
+}
+.controls button:hover { background: rgba(0,0,0,0.8); }
+
+/* Indicators */
+.indicators { display:flex; gap:.5rem; justify-content:center; margin-top:.6rem; }
+.dot { width:10px; height:10px; border-radius:50%; border: 2px solid rgba(0,0,0,0.12); background: transparent; cursor:pointer; }
+.dot.active { background: #333; border-color: #333; }
+
+/* About / Contact sections */
+.about, .contact { padding: 1.25rem; max-width: 900px; margin: 0 auto; }
+
+/* Responsive rules - mobile first then larger screens */
+@media (min-width: 700px) {
+  .hero h1 { font-size: 2.4rem; }
+  .slides { min-height: 360px; }
+  .controls { right: 18px; top: 18px; }
+}
+
+/* Desktop: nav links visible, menu toggle hidden */
+@media (min-width: 900px) {
+  .menu-toggle { display: none; }
+  .nav-links { display: flex; }
+}
+
+/* Small screens: hide nav-links and show menu toggle */
+@media (max-width: 899px) {
+  .nav-links { display: none; }
+  .menu-toggle { display: inline-flex; }
+}
