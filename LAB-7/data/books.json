@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "title": "Eloquent JavaScript",
+    "author": "Marijn Haverbeke",
+    "price": 15.99,
+    "available": true
+  },
+  {
+    "id": 2,
+    "title": "You Don't Know JS Yet",
+    "author": "Kyle Simpson",
+    "price": 18.5,
+    "available": true
+  },
+  {
+    "id": 3,
+    "title": "JavaScript: The Good Parts",
+    "author": "Douglas Crockford",
+    "price": 12.75,
+    "available": false
+  },
+  {
+    "id": 4,
+    "title": "Clean Code",
+    "author": "Robert C. Martin",
+    "price": 22.99,
+    "available": true
+  }
+]

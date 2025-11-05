@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Online Bookstore</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>📚 Online Bookstore</h1>
+  </header>
+
+  <main>
+    <section id="book-list-section">
+      <h2>Available Books</h2>
+      <div id="book-list" class="book-list"></div>
+    </section>
+
+    <section id="cart-section">
+      <h2>Your Cart</h2>
+      <div id="cart-items" class="cart-items"></div>
+      <div id="cart-summary" class="cart-summary">
+        <p>Total: $<span id="total-price">0.00</span></p>
+        <button id="checkout-btn">Proceed to Checkout</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Online Bookstore | ES6 Modules & JSON Demo</p>
+  </footer>
+
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>
